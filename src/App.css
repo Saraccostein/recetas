@@ -1,14 +1,170 @@
 /* Inicio */
-
 :root {
-    background-color: oklch(0.206 0.0449 291.98);
+    --background-color: oklch(0.2649 0.0463 282.78);
+    --gray: oklch(0.4314 0.0449 277.8);
+    --brown: oklch(0.6562 0.0239 330.46);
+    --beight: oklch(0.7703 0.0338 32.1);
+    --white: oklch(0.9397 0.0119 51.32);
+
+    --display-font: font-family: "Borel", cursive;
 }
 
 body {
-    color: white;
+    background-color: var(--background-color);
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: "Vend Sans", sans-serif;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 h1 {
+    color: var(--beight);
+    margin-bottom: 0;
+    font-family: var(--display-font);
+}
+
+h2 {
+    color: var(--brown);
+    font-family: var(--display-font);
+}
+
+h3 {
+    margin-left: 1.4rem;
+    color: var(--brown);
+    font-family: var(--display-font);
+}
+
+h3:hover {
+    color: var(--beight);
+}
+
+h2:hover {
+    color: var(--beight);
+}
+
+h2>spam {
+    color: var(--beight);
     font-size: 2rem;
-    font-weight: bold;
+}
+
+.nav-menu {
+    border: 2px solid var(--gray);
+    border-radius: 10px;
+    display: inline-flex;
+    gap: 0.5rem;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0.5rem;
+}
+
+nav {
+    margin-left: 1.5rem;
+}
+
+nav>h2 {
+    margin: 1.5rem;
+    display: inline;
+}
+
+.nav-menu>li {
+    font-size: 1.5rem;
+    background-color: var(--gray);
+    border-radius: 7px;
+    list-style: none;
+    margin: 0;
+    padding: 0.4rem;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.nav-menu li:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.nav-menu li:active {
+    background-color: var(--beight);
+}
+
+.nav-menu li:hover {
+    list-style-type: none;
+}
+
+ul li {
+    list-style-type: circle;
+}
+
+ul li:hover {
+    list-style-type: disc;
+}
+
+li::marker {
+    color: var(--brown);
+}
+
+li:hover::marker {
+    color: var(--beight);
+}
+
+img {
+    max-width: 500px;
+    height: auto;
+}
+
+#presentacion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#ingredientes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#presentacion {
+    margin-left: 0.5rem;
+}
+
+#procedimiento {
+    max-width: 51rem;
+}
+
+.nav-menu li.activo {
+    background: var(--brown);
+}
+
+@media (max-width: 1000px) {
+    #ingredientes {
+        flex-direction: column;
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        justify-self: center;
+        align-items: center;
+    }
+}
+
+@media (max-width: 600px) {
+    img {
+        max-width: 100%;
+    }
 }
